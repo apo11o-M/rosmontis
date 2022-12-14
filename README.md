@@ -55,6 +55,7 @@ from rosmontis import renderGraphMatrix
 
 # Note the zeroth column and row are the headers/labels of each node. The actual 
 # weight starts from row 1 column 1
+# 1 indicates there is an edge, 0 indicates no connection
 g = [[None, "A", "B", "C", "D", "E", "F"],
      ["A",   0,   1,   0,   0,   1,   0 ],
      ["B",   1,   0,   1,   0,   1,   0 ],
@@ -72,6 +73,8 @@ renderGraphMatrix(graph=g, graphName="example3", weighted=False, directed=False)
 ```python
 from rosmontis import renderGraphMatrix
 
+# Change the numbers from 1 to the weight value. Numbers other than 0 represents
+# a connection, vice versa.
 g = [[None, "A",   "B",   "C",   "D",   "E",   "F"  ],
      ["A",   0,     2,     0,     0,     0.5,   0   ],
      ["B",   0,     0,     3,     0,     0.2,   0   ],
