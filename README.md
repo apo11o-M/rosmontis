@@ -1,6 +1,6 @@
 # Rosmontis
 
-Rosmontis is a lightweight library that outputs a graph image using [graphviz](https://github.com/xflr6/graphviz) based on the adjacency list, adjacency dictionary, or adjacency matrix. This library skips the process of adding the nodes manually and only need to pass the variable representing the graph into the functions.
+Rosmontis is a lightweight library that outputs a graph image using [graphviz](https://github.com/xflr6/graphviz) based on the adjacency list, dictionary, or matrix. This library skips the process of adding the nodes manually and only need to pass the variable representing the graph into the functions.
 
 ## Installation
 
