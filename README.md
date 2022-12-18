@@ -28,7 +28,8 @@ g = [['A', ['B', 'E']],   # node A is connected to node B and node E
 # directory of this file.
 rosmontis.renderGraphList(graph=g, graphName="example1", weighted=False, directed=False)
 ```
-<img src="img/example1.png">
+<img src="https://raw.githubusercontent.com/apo11o-M/rosmontis/main/img/example1.png">
+
 
 ### Weighted Undirected Graph in Adjacency Dictionary
 
@@ -45,8 +46,7 @@ g = {'A': [['B', 2], ['E', 0.5]],
 
 rosmontis.renderGraphDict(graph=g, graphName="example2", weighted=True, directed=False)
 ```
-
-<img src="img/example2.png">
+<img src="https://raw.githubusercontent.com/apo11o-M/rosmontis/main/img/example2.png">
 
 ### Unweighted Undirected Graph in Adjacency Matrix
 
@@ -66,7 +66,7 @@ g = [[None, "A", "B", "C", "D", "E", "F"],
 
 rosmontis.renderGraphMatrix(graph=g, graphName="example3", weighted=False, directed=False)
 ```
-<img src="img/example3.png">
+<img src="https://raw.githubusercontent.com/apo11o-M/rosmontis/main/img/example3.png">
 
 ### Weighted Directed Graph in Adjacency Matrix
 
@@ -85,6 +85,6 @@ g = [[None, "A",   "B",   "C",   "D",   "E",   "F"  ],
 
 rosmontis.renderGraphMatrix(graph=g, graphName="example4", weighted=True, directed=True)
 ```
-<img src="img/example4.png">
+<img src="https://raw.githubusercontent.com/apo11o-M/rosmontis/main/img/example4.png">
 
 See more examples in the `examples/` folder.
