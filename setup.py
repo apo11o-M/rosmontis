@@ -1,8 +1,9 @@
+import pathlib
 from setuptools import setup, find_packages
 
-VERSION = "0.0.1"
+VERSION = "1.0.0"
 DESCRIPTION = "Create graph images with help of graphviz module"
-LONG_DESCRIPTION = "This module simplified the steps of creating a graph, where it adds the nodes and edges automatically from the inputed data structure to graphviz, creating the graph in one function call."
+LONG_DESCRIPTION = pathlib.Path('README.md').read_text(encoding='utf-8')
 
 setup(
     name = "rosmontis", 
@@ -12,9 +13,12 @@ setup(
     license = "MIT",
     description = DESCRIPTION,
     long_description = LONG_DESCRIPTION,
+    long_description_content_type = "text/markdown",
+    url = "https://github.com/apo11o-m/rosmontis",
+
+    python_requires='>=3',
     packages=find_packages(),
     install_requires=["graphviz"],
-    python_requires='>=3',
     keywords = ["graph", "visualization", "dot", "render"],
     classifiers = [
         "Development Status :: 3 - Alpha",

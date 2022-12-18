@@ -26,8 +26,9 @@ def renderGraphDict(graph: dict,
     for e in graph.items():
         g.append(list(e))
 
-    return renderGraphList(graph=g, graphName=graphName, weighted=weighted, 
-                    directed=directed, engine=engine, outputFormat=outputFormat)
+    return renderGraphList(graph=g, graphName=graphName, 
+                                weighted=weighted, directed=directed, 
+                                engine=engine, outputFormat=outputFormat)
 
 def renderGraphList(graph: list,
                     graphName: str="default",
@@ -81,7 +82,7 @@ def renderGraphList(graph: list,
         for n, e in graph:
             for edge in e:
                 g.edge(tail_name=str(n), head_name=str(edge[0]), 
-                       label=str(edge[1]))
+                    label=str(edge[1]))
     else:
         for n, e in graph:
             nodes.add(str(n))
@@ -123,12 +124,12 @@ def renderGraphMatrix(graph: list[list[Any]],
     Example:
         >>> import rosmontis
         >>> g = [[None, "A", "B", "C", "D", "E", "F"],
-                 ["A",   0,   1,   0,   0,   1,   0 ],
-                 ["B",   1,   0,   1,   0,   1,   0 ],
-                 ["C",   0,   1,   0,   1,   0,   0 ],
-                 ["D",   0,   0,   1,   0,   1,   1 ],
-                 ["E",   1,   1,   0,   1,   0,   0 ],
-                 ["F",   0,   0,   0,   1,   0,   0 ]]
+                ["A",   0,   1,   0,   0,   1,   0 ],
+                ["B",   1,   0,   1,   0,   1,   0 ],
+                ["C",   0,   1,   0,   1,   0,   0 ],
+                ["D",   0,   0,   1,   0,   1,   1 ],
+                ["E",   1,   1,   0,   1,   0,   0 ],
+                ["F",   0,   0,   0,   1,   0,   0 ]]
         >>> renderGraphMatrix(g, weighted="False", directed="False")
     """
 
@@ -147,10 +148,10 @@ def renderGraphMatrix(graph: list[list[Any]],
             if (graph[i][j] != 0):
                 if (weighted):
                     g.edge(tail_name=str(graph[i][0]), 
-                           head_name=str(graph[0][j]), 
-                           label=str(graph[i][j]))
+                        head_name=str(graph[0][j]), 
+                        label=str(graph[i][j]))
                 else:
                     g.edge(tail_name=str(graph[i][0]), 
-                           head_name=str(graph[0][j]))
+                        head_name=str(graph[0][j]))
 
     return g.render(graphName, format=outputFormat, engine=engine)

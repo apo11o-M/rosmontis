@@ -1,25 +1,20 @@
-from collections import defaultdict
 from rosmontis import renderGraphMatrix
 
-# g[i] = [node1, node2], meaning there is a undirected path
-# from node1 to node2
-g1 = [["A", "B"], ["A", "E"], ["B", "E"], 
-      ["B", "C"], ["C", "D"], ["D", "E"], ["D", "F"]]
-
-g2 = [["A", "B", 2], ["A", "E", 0.5], ["B", "E", 0.2], 
-      ["B", "C", 3], ["C", "D", 7], ["D", "E", 0.15], ["D", "F", 1.6]]
+# 1 indicates there is an edge, 0 indicates no connection
+# One can change the 1 into other numbers and use it to represent the weight of
+# the edges
 
 # ------------------------------------------------------------------------------
 # Unweighted, Undirect
 # Create a graph using adjacency matrix as representation
 adjMatrix1 = [
     [None, "A", "B", "C", "D", "E", "F"],
-    ["A",   0,   1,   0,   0,   1,   0 ],
-    ["B",   1,   0,   1,   0,   1,   0 ],
+    ["A",   0,   0,   0,   0,   1,   1 ],
+    ["B",   0,   0,   1,   0,   0,   1 ],
     ["C",   0,   1,   0,   1,   0,   0 ],
     ["D",   0,   0,   1,   0,   1,   1 ],
-    ["E",   1,   1,   0,   1,   0,   0 ],
-    ["F",   0,   0,   0,   1,   0,   0 ]
+    ["E",   1,   0,   0,   1,   0,   1 ],
+    ["F",   1,   1,   0,   1,   1,   0 ]
 ]
 
 # output a png image representing the graph in the same
@@ -68,5 +63,6 @@ adjMatrix4 = [
     ["E",   0,     0,     0,     0,     0,     0   ],
     ["F",   0,     0,     0,     0,     0,     0   ]
 ]
+
 renderGraphMatrix(graph=adjMatrix4, graphName="weighted-direct",
                           weighted=True, directed=True)
